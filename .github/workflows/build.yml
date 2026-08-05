@@ -1,4 +1,4 @@
-name: IYS Backend Spring Boot CI
+name: Spring Boot CI
 
 on:
   push:
@@ -20,6 +20,9 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
+
+      - name: Grant Execute Permission
+        run: chmod +x mvnw
 
       - name: Build and Verify Project
         run: ./mvnw clean verify

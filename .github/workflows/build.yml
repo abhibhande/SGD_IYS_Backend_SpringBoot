@@ -21,8 +21,5 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Grant Execute Permission
-        run: chmod +x mvnw
-
       - name: Build and Verify Project
-        run: ./mvnw clean verify
+        run: mvn clean verify

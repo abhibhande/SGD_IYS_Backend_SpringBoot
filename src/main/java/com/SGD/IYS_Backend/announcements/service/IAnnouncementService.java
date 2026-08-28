@@ -1,16 +1,16 @@
 package com.SGD.IYS_Backend.announcements.service;
 
 
-import com.SGD.IYS_Backend.entity.Announcements;
+import com.SGD.IYS_Backend.entity.Announcement;
 
 import java.util.List;
 
 
 public interface IAnnouncementService {
 
-    Announcements getAnnouncement(Long enentId);
-    List<Announcements> getAllActiveAnnouncement();
-    List<Announcements> getAllLiveAnnouncement();
-    List<Announcements> getAllUpcommingLiveAnnouncement();
+    Announcement getAnnouncement(Long enentId);
+    List<Announcement> getAllActiveAnnouncement();
+    List<Announcement> getAllLiveAnnouncement();
+    List<Announcement> getAllUpcommingLiveAnnouncement();
 
 }

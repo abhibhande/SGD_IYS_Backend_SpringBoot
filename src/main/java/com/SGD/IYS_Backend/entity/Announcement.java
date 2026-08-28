@@ -13,7 +13,7 @@ import java.time.OffsetDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Announcements {
+public class Announcement {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

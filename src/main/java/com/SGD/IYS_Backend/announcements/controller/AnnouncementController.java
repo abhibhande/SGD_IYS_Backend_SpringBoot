@@ -1,7 +1,7 @@
 package com.SGD.IYS_Backend.announcements.controller;
 
 import com.SGD.IYS_Backend.announcements.service.IAnnouncementService;
-import com.SGD.IYS_Backend.entity.Announcements;
+import com.SGD.IYS_Backend.entity.Announcement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -17,7 +17,7 @@ public class AnnouncementController {
     private final IAnnouncementService announscementService;
 
     @GetMapping
-    public List<Announcements> getAllActiveAnnouncement()
+    public List<Announcement> getAllActiveAnnouncement()
     {
         return announscementService.getAllActiveAnnouncement();
     }
@@ -26,7 +26,7 @@ public class AnnouncementController {
     @GetMapping("/{eventId}")
     public ResponseEntity<?> getAnnouncement(@PathVariable(name = "eventId") Long eventId)
     {
-        Announcements announcements = announscementService.getAnnouncement(eventId);
+        Announcement announcements = announscementService.getAnnouncement(eventId);
         if(announcements == null)
         {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Announcements found for Announcements id: "+eventId);
@@ -35,13 +35,13 @@ public class AnnouncementController {
     }
 
     @GetMapping("/live")
-    public List<Announcements> getAllLiveAnnouncement()
+    public List<Announcement> getAllLiveAnnouncement()
     {
         return announscementService.getAllLiveAnnouncement();
     }
 
     @GetMapping("/home")
-    public List<Announcements> getAllUpcommingLiveAnnouncement()
+    public List<Announcement> getAllUpcommingLiveAnnouncement()
     {
         return announscementService.getAllUpcommingLiveAnnouncement();
     }
